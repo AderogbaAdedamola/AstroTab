@@ -1,6 +1,8 @@
 import './style.css'
 import heroImg from './assets/hero.png'
 import refreshIcon from './assets/refresh.png'
+import fullViewIcon from './assets/full-view.png'
+import lessViewIcon from './assets/less-view.png'
 
 
 const date = new Date();
@@ -15,17 +17,6 @@ const greeting = () => {
     return "GOOD EVENING";
   }
 };
-
-const refresh = () => {
-  location.reload();
-};
-
-function toggleFullView() {
-  
-}
-function reloadPage() {
-  window.location.reload();
-}
 
 const dateOptions = { 
   weekday: 'long', 
@@ -59,7 +50,7 @@ fetch(API_URL)
     .then(response => response.json())
     .then(data => {
       data = data;
-      console.log(daa)
+      console.log(data)
 
         if (data.media_type === "image") {
         media = `<img src="${data.url}"/>`;
@@ -67,9 +58,19 @@ fetch(API_URL)
         media = `<video src="${data.url}" controls></video>`;
         }
 
-    
+        
+    const app = document.querySelector('#app');
 
-      document.querySelector('#app').innerHTML = `
+    function toggleFullView() {
+          
+          if (app.innerHTML === withAll) {
+            app.innerHTML = fullView;
+          } else {
+            app.innerHTML = withAll;
+          }
+        }
+
+     const withAll = `
       <div id="bg-container">
         ${media}
       </div>
@@ -82,10 +83,12 @@ fetch(API_URL)
               </div>
             </div>
             <div class="nav-buttons">
-              <button class="reload" onclick="reloadPage()">
+              <button class="reload" onclick="window.location.reload()">
                 <img src="${refreshIcon}" alt="Reload Icon" />
               </button>
-              <button class="full-view" onclick="toggleFullView()"></button>
+              <button class="full-view" onclick="toggleFullView()">
+                <img src="${fullViewIcon}" alt="Full View Icon" />
+              </button>
             </div>
           </div>
         </section>
@@ -110,14 +113,39 @@ fetch(API_URL)
 
       `
 
+      const fullView = `
+      <div id="bg-container">
+        ${media}
+      </div>
+        <section id="top">
+          <div class="nav">
+            <div class="logo-container">
+              <p class="logo-text"> </p>
+              <div class="logo">
+              </div>
+            </div>
+            <div class="nav-buttons">
+              <button class="full-view" onclick="toggleFullView()">
+                <img src="${lessViewIcon}" alt="Less View Icon" />
+              </button>
+            </div>
+          </div>
+        </section>
+
+      `
+      function toggleFullView() {
+          
+          if (app.innerHTML === withAll) {
+            app.innerHTML = fullView;
+          } else {
+            app.innerHTML = withAll;
+          }
+        }
+      document.querySelector('#app').innerHTML = withAll;
 })
     .catch(err => {
-        // document.querySelector("#app").innerHTML = `<p>Error: ${err.message}</p>`;
-      console.log("Error", err)
 
       document.querySelector('#app').innerHTML = `
-      <div id="bg-container">
-      </div>
         <section id="top">
           <div class="nav">
             <div class="logo-container">
@@ -127,11 +155,8 @@ fetch(API_URL)
               </div>
             </div>
             <div class="nav-buttons">
-              <button class="reload" onclick="reloadPage()">
+              <button class="reload" onclick="window.location.reload()">
                 <img src="${refreshIcon}" alt="Reload Icon" />
-              </button>
-              <button class="full-view" id="full-view-button" onclick="toggleFullView()">
-                
               </button>
             </div>
           </div>
@@ -145,9 +170,16 @@ fetch(API_URL)
         
       </section>
 
+      <section id="middle">
+        <p>Something went wrong!</p>
+        <p>Reload the page to try again.</p>
+      </section>
+
 
       <section id="reload-section">
-        <button id="reload-button" onclick="reloadPage()">Reload</button>  
+        <button id="reload-button" onclick="window.location.reload()">
+          <img src="${refreshIcon}" alt="Reload Icon" />
+        </button>  
       </section>
 
       `

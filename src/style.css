@@ -13,15 +13,15 @@
   --heading: system-ui, 'Segoe UI', Roboto, sans-serif;
   --mono: ui-monospace, Consolas, monospace;
 
+
   font: 16px/145% var(--sans);
   letter-spacing: 0.18px;
   color: var(--text);
+  background-color: var(--bg);
 }
 
 body {
   margin: 0;
-  min-height: 100vh;
-  background: var(--bg);
 }
 
 h1,
@@ -29,12 +29,14 @@ h2 {
   font-family: var(--mono);
   font-weight: 500;
   color: var(--text-h);
+  text-decoration: bold;
 }
 
 h1 {
   font-size: 60px;
   letter-spacing: -1.68px;
   margin: 32px 0;
+  text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   @media (max-width: 1024px) {
     font-size: 40px;
     margin: 40px 0;
@@ -54,20 +56,23 @@ h2 {
 }
 
 #app {
-  margin: 0 auto;
+  margin: 0;
+  padding: 0;
+  width: 100%;
   text-align: center;
-  min-height: 100dvh;
+  min-height: 100vh;
   display: flex;
   flex-direction: column;
   box-sizing: border-box;
+  position: fixed;
 }
 
 #bg-container {
   position: fixed;
   top: 0;
   left: 0;
-  width: 100vw;
-  height: 100vh;
+  width: 100%;
+  height: 100%;
   z-index: -1;
   overflow: hidden;
 }
@@ -128,15 +133,15 @@ h2 {
       gap: 8px;
       color: var(--text-h);
       font-size: 16px;
-      margin: auto 50px auto 10px;
+      margin-right: 45px;
 
       button {
-        height: 32px;
-        width: 32px;
+        height: 40px;
+        width: 55px;
         border-radius: 6px;
         cursor: pointer;
         border: 1px solid var(--border);
-        background: var(--social-bg);
+        background: var(--text);
         display: flex;
         padding: 6px 12px;
         align-items: center;
@@ -230,6 +235,24 @@ h2 {
 }
 }
 
+#middle {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  text-align: center;
+  color: var(--text-h);
+  font-size: 16px;
+  z-index: 10;
+
+  @media (max-width: 1024px) {
+    padding: 32px 20px 24px;
+    gap: 18px;
+  }
+  p{
+    color: var(--text-date);
+  }
+}
+
 #reload-section {
   display: flex;
   justify-content: center;
@@ -238,10 +261,12 @@ h2 {
   margin: 32px 0;
 
   button {
+    width: 100px;
+    height: 80px;
     border-radius: 6px;
     cursor: pointer;
     border: 1px solid var(--border);
-    background: var(--social-bg);
+    background: var(--text);
     display: flex;
     padding: 6px 12px;
     align-items: center;
@@ -250,8 +275,15 @@ h2 {
     &:hover {
       box-shadow: var(--shadow);
     }
+    img {
+      height: 100%;
+      width: 100%;
+      object-fit: cover;
+    }
   }
 }
+
+
 #loading-screen {
   position: fixed;
   top: 0;
