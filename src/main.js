@@ -50,7 +50,6 @@ fetch(API_URL)
     .then(response => response.json())
     .then(data => {
       data = data;
-      console.log(data)
 
         if (data.media_type === "image") {
         media = `<img src="${data.url}"/>`;
