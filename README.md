@@ -21,6 +21,5 @@ Built with a dark mission-control aesthetic using monospace typography and deep 
 - JavaScript
 - NASA APOD API
 
-link: [AstroTab](https://aderogbaadedamola.github.io/AstroTab/)
-
+link: `https://aderogbaadedamola.github.io/AstroTab/`
 ```
