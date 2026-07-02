@@ -32,7 +32,7 @@ const timeOptions = {
 
 const formattedDate = date.toLocaleDateString('en-US', dateOptions);
 const formattedTime = date.toLocaleTimeString('en-US', timeOptions);
-const API_URL = `https://api.nasa.gov/planetary/apod?api_key=${import.meta.env.VITE_API_KEY}`;
+const API_URL = `https://api.nasa.gov/planetary/apod?api_key=${import.meta.env.VITE_NASA_API_KEY}`;
 
 let media;
 let data;
