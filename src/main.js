@@ -105,7 +105,7 @@ fetch(API_URL)
       <section id="bottom">
         <div class="img-data">
           <h2 class="title">${data?.title}</h2>
-          <p class="date">${data?.date} NASA / ESA / CSA / STSc </p>
+          <p class="date">${data?.date}</p>
           <p class="explanation">${data?.explanation}</p>
         </div>
         
