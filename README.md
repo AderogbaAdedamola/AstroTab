@@ -1,28 +1,23 @@
-```md
 # AstroTab 🌌
 
-AstroTab is a NASA Astronomy Picture of the Day (APOD) browser and new tab replacement.
-
-A full-screen space-themed page that shows daily NASA imagery with a live clock, image title and description, date navigation, and a quick refresh button.
-
-If Error, give a beautiful blue like background and a refresh button at the bottom to refresh and load NASA APOD as the background image or video
-
-Built with a dark blue mission-control aesthetic using monospace typography and deep space tones.
+A new tab replacement that swaps your blank page for NASA's Astronomy Picture of the Day. Full-screen image (or video), live clock, title + description, and buttons to browse past days.
 
 ## Features
-- NASA APOD daily image display
+
+- Daily NASA APOD as a full-screen background
 - Live clock
-- Image title + description
-- Date navigation
+- Title and description for each image
+- Date navigation (browse past days)
 - Refresh button
-- Full-screen new tab experience
+- Blue fallback screen with a retry button if the API is down
 
-## Tech
-- HTML
-- CSS
-- JavaScript
-- NASA APOD API
+## Built with
 
-- link: [AstroTab](https://aderogbaadedamola.github.io/AstroTab/)
- 
-```
+HTML, CSS, JavaScript, NASA APOD API — no frameworks, no build step.
+
+# Help
+If Error, give a beautiful blue like background and a refresh button at the bottom to refresh and load NASA APOD as the background image or video
+
+## Try it
+
+🔗 [AstroTab](https://aderogbaadedamola.github.io/AstroTab/)
