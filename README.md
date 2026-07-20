@@ -1,4 +1,4 @@
-# AstroTab 🌌
+# AstroTab 
 
 A new tab replacement that swaps your blank page for NASA's Astronomy Picture of the Day. Full-screen image (or video), live clock, title + description, and buttons to browse past days.
 
